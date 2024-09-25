@@ -33,7 +33,7 @@ public class Cliente {
 	
 	@OneToMany(mappedBy = "cliente")
 	@JsonBackReference
-	private Set <Pedido> pedidos; 
+	private Set <Pedido> pedidos;
 
 	public int getId() {
 		return id;
@@ -74,6 +74,16 @@ public class Cliente {
 	public void setDatanascimento(String datanascimento) {
 		this.datanascimento = datanascimento;
 	}
+
+	public Set<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(Set<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	} 
+
+	
 	
 	
 }

@@ -26,12 +26,6 @@ public class Estoque {
 	@JsonBackReference
 	private Livro livro;
 	
-	@OneToOne
-	@JoinColumn(name = "cd_id")
-	@JsonBackReference
-	private CD cd;
-	
-	
 	public int getId() {
 		return id;
 	}
@@ -47,15 +41,7 @@ public class Estoque {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	public CD getCD() {
-		return cd;
-	}
 
-	public void setCD(CD cd) {
-		this.cd = cd;
-	}
-	
 	public Livro getLivro() {
 		return livro;
 	}
@@ -63,5 +49,22 @@ public class Estoque {
 	public void setLivro(Livro livro) {
 		this.livro = livro;
 	}
+
+	public CD getCd() {
+		return cd;
+	}
+
+	public void setCd(CD cd) {
+		this.cd = cd;
+	}
+
+	@OneToOne
+	@JoinColumn(name = "cd_id")
+	@JsonBackReference
+	private CD cd;
+	
+
+	
+	
 	
 }

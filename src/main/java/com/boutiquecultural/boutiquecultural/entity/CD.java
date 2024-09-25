@@ -35,14 +35,6 @@ public class CD {
 	@ManyToMany(mappedBy = "cds")
 	@JsonBackReference
 	private Set <Pedido> pedidos;
-	
-	public Set<Pedido> getPedido() {
-		return pedidos;
-	}
-
-	public void setPedido(Set<Pedido> pedidos) {
-		this.pedidos = pedidos;
-	}
 
 	public int getId() {
 		return id;
@@ -75,6 +67,23 @@ public class CD {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+
+	public Estoque getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Estoque estoque) {
+		this.estoque = estoque;
+	}
+
+	public Set<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(Set<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+	
 	
 	
 

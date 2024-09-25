@@ -2,6 +2,7 @@ package com.boutiquecultural.boutiquecultural.entity;
 
 import java.util.Set;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CascadeType;
@@ -45,14 +46,6 @@ public class Livro {
 	@ManyToMany(mappedBy = "livros")
 	@JsonBackReference
 	private Set <Pedido> pedidos;
-	
-	public Set<Pedido> getPedido() {
-		return pedidos;
-	}
-
-	public void setPedido(Set<Pedido> pedidos) {
-		this.pedidos = pedidos;
-	}
 
 	public int getId() {
 		return id;
@@ -101,6 +94,32 @@ public class Livro {
 	public void setVolume(String volume) {
 		this.volume = volume;
 	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+	public Estoque getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Estoque estoque) {
+		this.estoque = estoque;
+	}
+
+	public Set<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(Set<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+	
+	
 	
 	
 

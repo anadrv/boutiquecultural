@@ -50,6 +50,32 @@ public class Pedido {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	public Set<Livro> getLivros() {
+		return livros;
+	}
+
+	public void setLivros(Set<Livro> livros) {
+		this.livros = livros;
+	}
+
+	public Set<CD> getCds() {
+		return cds;
+	}
+
+	public void setCds(Set<CD> cds) {
+		this.cds = cds;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	
 	
 	
 		
