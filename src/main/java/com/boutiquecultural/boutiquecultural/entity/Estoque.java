@@ -32,7 +32,6 @@ public class Estoque {
 	private CD cd;
 	
 	
-
 	public int getId() {
 		return id;
 	}
@@ -49,5 +48,20 @@ public class Estoque {
 		this.quantidade = quantidade;
 	}
 	
+	public CD getCD() {
+		return cd;
+	}
+
+	public void setCD(CD cd) {
+		this.cd = cd;
+	}
+	
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
+	}
 	
 }
