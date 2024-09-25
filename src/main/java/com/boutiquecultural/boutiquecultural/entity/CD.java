@@ -1,8 +1,7 @@
 package com.boutiquecultural.boutiquecultural.entity;
 
-import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -10,7 +9,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -30,11 +28,9 @@ public class CD {
 	private double preco;
 	
 	@OneToOne(mappedBy = "cd", cascade = CascadeType.ALL)
-	private Estoque estoque;
+	@JsonIgnore
+    private Estoque estoque;
 	
-	@ManyToMany(mappedBy = "cds")
-	@JsonBackReference
-	private Set <Pedido> pedidos;
 
 	public int getId() {
 		return id;
@@ -76,14 +72,6 @@ public class CD {
 		this.estoque = estoque;
 	}
 
-	public Set<Pedido> getPedidos() {
-		return pedidos;
-	}
-
-	public void setPedidos(Set<Pedido> pedidos) {
-		this.pedidos = pedidos;
-	}
-	
 	
 	
 

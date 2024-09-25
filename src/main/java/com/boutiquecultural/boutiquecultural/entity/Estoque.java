@@ -1,13 +1,12 @@
 package com.boutiquecultural.boutiquecultural.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -22,10 +21,11 @@ public class Estoque {
 	private int quantidade;
 	
 	@OneToOne
-	@JoinColumn(name = "livro_id")
-	@JsonBackReference
-	private Livro livro;
-	
+    private Livro livro;
+
+    @OneToOne
+    private CD cd;
+
 	public int getId() {
 		return id;
 	}
@@ -57,14 +57,10 @@ public class Estoque {
 	public void setCd(CD cd) {
 		this.cd = cd;
 	}
-
-	@OneToOne
-	@JoinColumn(name = "cd_id")
-	@JsonBackReference
-	private CD cd;
+	
 	
 
 	
-	
+
 	
 }

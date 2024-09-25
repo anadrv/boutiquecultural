@@ -1,7 +1,7 @@
 package com.boutiquecultural.boutiquecultural.entity;
 
-import java.util.Set;
 
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+
 
 @Entity
 public class Pedido {
@@ -24,16 +25,25 @@ public class Pedido {
 	private String nome;
 	
 	@ManyToMany
-	@JoinTable (name = "pedido_livro", joinColumns = @JoinColumn(name = "pedido_id"), inverseJoinColumns = @JoinColumn(name = "livro_id"))
-	private Set <Livro> livros;
-	
-	@ManyToMany
-	@JoinTable (name = "pedido_cd", joinColumns = @JoinColumn(name = "pedido_id"), inverseJoinColumns = @JoinColumn(name = "cd_id"))
-	private Set <CD> cds;
-	
-	@ManyToOne
-	@JoinColumn (name = "cliente_id")
-	private Cliente cliente;
+    @JoinTable(
+        name = "pedido_livro",
+        joinColumns = @JoinColumn(name = "pedido_id"),
+        inverseJoinColumns = @JoinColumn(name = "livro_id")
+    )
+    private Set<Livro> livros;
+
+
+    @ManyToMany
+    @JoinTable(
+        name = "pedido_cd",
+        joinColumns = @JoinColumn(name = "pedido_id"),
+        inverseJoinColumns = @JoinColumn(name = "cd_id")
+    )
+    private Set<CD> cds;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 
 	public int getId() {
 		return id;
@@ -74,9 +84,8 @@ public class Pedido {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-
-	
-	
-	
+    
+    
+    
 		
 }

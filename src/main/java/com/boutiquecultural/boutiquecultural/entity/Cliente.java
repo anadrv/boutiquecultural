@@ -3,7 +3,7 @@ package com.boutiquecultural.boutiquecultural.entity;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+
 
 @Entity
 public class Cliente {
@@ -31,9 +32,9 @@ public class Cliente {
 	@Column(nullable = false)
 	private String datanascimento;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "cliente")
-	@JsonBackReference
-	private Set <Pedido> pedidos;
+    private Set<Pedido> pedidos;
 
 	public int getId() {
 		return id;
@@ -81,9 +82,9 @@ public class Cliente {
 
 	public void setPedidos(Set<Pedido> pedidos) {
 		this.pedidos = pedidos;
-	} 
-
+	}
 	
+
 	
 	
 }
