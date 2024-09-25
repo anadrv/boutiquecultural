@@ -2,6 +2,7 @@ package com.boutiquecultural.boutiquecultural.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import com.boutiquecultural.boutiquecultural.entity.CD;
 import com.boutiquecultural.boutiquecultural.service.CDService;
 
 @RestController
-@RequestMapping("/Cds")//aspas = goat
+@RequestMapping("/Cds")//aspas = "Goat"
 
 public class CDController {
 	@Autowired
