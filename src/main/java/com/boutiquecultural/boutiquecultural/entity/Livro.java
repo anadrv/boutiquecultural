@@ -42,7 +42,6 @@ public class Livro {
 	@JsonIgnore
     private Estoque estoque;
 
-
 	public int getId() {
 		return id;
 	}
